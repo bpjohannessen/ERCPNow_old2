@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ERCPNow.Views.CalculatorView"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             
+             ios:NavigationPage.PrefersLargeTitles="True"
+             ios:Page.LargeTitleDisplay="Always"
+             Title="{Binding Title}">
+    <ContentPage.Content>
+        <ScrollView>
+            <TableView Intent="Form" BackgroundColor="White">
+                <TableRoot>
+                    <TableSection>
+                        <EntryCell Label="Initials" Text="" Placeholder="Patient's initials" />
+                        <EntryCell Label="Age" Text="" Placeholder="Years" Keyboard="Numeric" />
+                        <EntryCell Label="ALAT" Text="" Placeholder="IU/L" Keyboard="Numeric" />
+                        <EntryCell Label="GGT" Text="" Placeholder="IU/L" Keyboard="Numeric" />
+                        <EntryCell Label="Bilirubin" Text="" Placeholder="&#181;mol/L" Keyboard="Numeric" />
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
