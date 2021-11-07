@@ -10,17 +10,23 @@
              Title="{Binding Title}">
     <ContentPage.Content>
         <ScrollView>
-            <TableView Intent="Form" BackgroundColor="White">
+            <StackLayout>
+            <StackLayout>
+                <TableView Intent="Form" BackgroundColor="White">
                 <TableRoot>
                     <TableSection>
-                        <EntryCell Label="Initials" Text="" Placeholder="Patient's initials" />
-                        <EntryCell Label="Age" Text="" Placeholder="Years" Keyboard="Numeric" />
+                        <EntryCell x:Name="InputInitials" Label="Initials" Text="{Binding Initials}" Placeholder="Patient's initials" />
+                        <EntryCell x:Name="InputAge" Label="Age" Text="" Placeholder="Years" Keyboard="Numeric" />
                         <EntryCell Label="ALAT" Text="" Placeholder="IU/L" Keyboard="Numeric" />
                         <EntryCell Label="GGT" Text="" Placeholder="IU/L" Keyboard="Numeric" />
                         <EntryCell Label="Bilirubin" Text="" Placeholder="&#181;mol/L" Keyboard="Numeric" />
+                        <ViewCell><Button Text="Save" Clicked="SavedClicked" /></ViewCell>
                     </TableSection>
                 </TableRoot>
             </TableView>
+                </StackLayout>
+            <Button Text="Save" Clicked="SavedClicked" />
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

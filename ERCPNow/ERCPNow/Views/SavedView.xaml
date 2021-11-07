@@ -5,10 +5,14 @@
              x:Class="ERCPNow.Views.SavedView"
              Title="Saved calculations">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Hello, SavedView!"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <ListView x:Name="SavedList" ItemTapped="SavedList_OnItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Initials}" Detail="{Binding Id}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -13,10 +13,13 @@ namespace ERCPNow.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SavedDetailView : ContentPage
     {
-        public SavedDetailView()
+        private SavedDetailViewModel _vm;
+        public SavedDetailView(SavedDetailViewModel vm)
         {
             InitializeComponent();
-            BindingContext = new SavedDetailViewModel();
+            
+            BindingContext = vm;
+            _vm = vm;
         }
     }
 }

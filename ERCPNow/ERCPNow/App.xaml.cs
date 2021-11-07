@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using ERCPNow.Data;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,6 +10,18 @@ namespace ERCPNow
 {
     public partial class App : Application
     {
+        private static CalcDatabase database;
+        public static CalcDatabase Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new CalcDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "ERCPNow.db3"));
+                }
+                return database;
+            }
+        }
         public App()
         {
             InitializeComponent();
